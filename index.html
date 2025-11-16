@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_back,arrow_forward,keyboard_arrow_down"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="./js/listUsers.js"></script>
+    <title>Test</title>
+  </head>
+  <body>
+    <div class="user-overview">
+      <header class="user-overview__header">
+        <ul class="filters">
+          <li class="filters__item">
+            <input id="filters__search" placeholder="Search..." type="text" />
+          </li>
+
+          <li class="filters__item filters__item--type">
+            <p class="filters__label">
+              Type
+              <span class="material-symbols-outlined">
+                keyboard_arrow_down
+              </span>
+            </p>
+            <ul class="dropdown dropdown--type hidden" data-filter="type">
+              <li class="dropdown__item">
+                <label class="dropdown__label">
+                  <input type="checkbox" name="type" value="all" checked />
+                  <span class="checkmark"></span> All
+                </label>
+              </li>
+              <li class="dropdown__item">
+                <label class="dropdown__label">
+                  <input type="checkbox" name="type" value="service" />
+                  <span class="checkmark"></span> Service
+                </label>
+              </li>
+              <li class="dropdown__item">
+                <label class="dropdown__label">
+                  <input type="checkbox" name="type" value="connect" />
+                  <span class="checkmark"></span> Connect
+                </label>
+              </li>
+            </ul>
+          </li>
+
+          <li class="filters__item filters__item--state">
+            <p class="filters__label">
+              State
+              <span class="material-symbols-outlined">
+                keyboard_arrow_down
+              </span>
+            </p>
+            <ul class="dropdown dropdown--state hidden" data-filter="state">
+              <li class="dropdown__item">
+                <label class="dropdown__label">
+                  <input type="checkbox" name="status" value="all" checked />
+                  <span class="checkmark"></span> All
+                </label>
+              </li>
+              <li class="dropdown__item">
+                <label class="dropdown__label">
+                  <input type="checkbox" name="status" value="active" />
+                  <span class="checkmark"></span> Active
+                </label>
+              </li>
+              <li class="dropdown__item">
+                <label class="dropdown__label">
+                  <input type="checkbox" name="status" value="inactive" />
+                  <span class="checkmark"></span> Inactive
+                </label>
+              </li>
+              <li class="dropdown__item">
+                <label class="dropdown__label">
+                  <input type="checkbox" name="status" value="deactivated" />
+                  <span class="checkmark"></span> Deactivated
+                </label>
+              </li>
+            </ul>
+          </li>
+
+          <button class="filters__apply-btn">Apply Filters</button>
+        </ul>
+
+        <button class="user-overview__create-btn">+ Create new</button>
+      </header>
+
+      <section class="user-overview__grid"></section>
+
+      <nav class="pagination">
+        <button class="pagination__arrow pagination__arrow--prev">
+          <span class="material-symbols-outlined">arrow_back</span>
+        </button>
+        <div class="pagination__pages"></div>
+        <button class="pagination__arrow pagination__arrow--next">
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </button>
+      </nav>
+    </div>
+    <!-- Modal Window -->
+    <div class="modal hidden">
+      <div class="modal__content">
+        <button class="default--close-modal">&times;</button>
+        <h2>Create New User</h2>
+        <form id="create-user-form">
+          <label
+            >First Name <input type="text" name="firstName" required
+          /></label>
+          <label
+            >Last Name <input type="text" name="lastName" required
+          /></label>
+          <label>Email <input type="email" name="email" required /></label>
+          <label
+            >Status
+            <select name="status">
+              <option value="active">Active</option>
+              <option value="inactive">Inactive</option>
+              <option value="deactivated">Deactivated</option>
+            </select>
+          </label>
+          <label
+            >Type
+            <select name="type">
+              <option value="service">Service</option>
+              <option value="connect">Connect</option>
+            </select>
+          </label>
+          <button type="submit">Save</button>
+          <button type="button" class="close-modal">Cancel</button>
+        </form>
+      </div>
+    </div>
+    <div class="overlay hidden"></div>
+  </body>
+</html>
