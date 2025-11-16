@@ -1,0 +1,10 @@
+{
+  "name": "api",
+  "description": "Mock API setup with json-server.",
+  "scripts": {
+    "dev": "json-server --watch db.json"
+  },
+  "devDependencies": {
+    "json-server": "0.17.4"
+  }
+}
