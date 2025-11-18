@@ -73,6 +73,7 @@ This functionality is currently under development.
 
 ## Project Structure
 
+```
 climapulse/
 ├── api/
 │ ├── db.json
@@ -89,6 +90,7 @@ climapulse/
 │ ├── package.json
 │ └── package-lock.json
 └── README.md
+```
 
 ---
 
